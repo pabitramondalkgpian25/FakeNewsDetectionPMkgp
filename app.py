@@ -128,9 +128,9 @@ with left:
                     p_real = 0.5
 
                 # Simple decision without threshold
-is_real = (y_pred == 0)   # 0 → REAL, 1 → FAKE
+                is_real = (y_pred == 0)   # 0 → REAL, 1 → FAKE
 
-st.markdown("<div class='result'>", unsafe_allow_html=True)
+                st.markdown("<div class='result'>", unsafe_allow_html=True)
 if is_real:
     st.success("✅ REAL news detected")
     st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
@@ -152,4 +152,5 @@ with right:
     st.info(
         "Tip: For best accuracy, use the **news from the dataset** "
     )
+
 
