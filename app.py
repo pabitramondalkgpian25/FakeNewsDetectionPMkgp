@@ -100,7 +100,7 @@ st.markdown("---")
 # ------------------- Input area -------------------
 left, right = st.columns([2, 1], gap="large")
 
-with left:
+ with left:
     st.subheader("Paste a news article/headline")
     st.markdown("<section class='newsbox'>", unsafe_allow_html=True)
     news_text = st.text_area(
@@ -142,7 +142,7 @@ with left:
             except Exception as e:
                    st.error(f"Prediction failed: {e}")
 
-                with right:
+ with right:
                   st.subheader("Guidelines :")
                   st.write(
                               "- Paste headline or short article text.\n"
@@ -152,6 +152,7 @@ with left:
                    st.info(
                               "Tip: For best accuracy, use the **news from the dataset** "
                           )
+
 
 
 
