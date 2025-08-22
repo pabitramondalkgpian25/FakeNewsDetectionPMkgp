@@ -149,7 +149,7 @@ with right:
                               "- Result shows ✅ for REAL and ❌ for FAKE.\n"
                               "- Thank you for using this webpage ."
                           )
-    st.info("Tip: For best accuracy, use the **news from the dataset**")
+
 
 
 
