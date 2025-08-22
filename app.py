@@ -128,26 +128,28 @@ with left:
                     p_real = 0.5
 
                 # Simple decision without threshold
-                is_real = (y_pred == 0)   # y_pred == 1 → REAL, y_pred == 0 → FAKE
+is_real = (y_pred == 0)   # 0 → REAL, 1 → FAKE
 
+st.markdown("<div class='result'>", unsafe_allow_html=True)
+if is_real:
+    st.success("✅ REAL news detected")
+    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
+else:
+    st.error("❌ FAKE news detected")
+    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
-                st.markdown("<div class='result'>", unsafe_allow_html=True)
-                if is_real:
-                    st.success(f"✅ REAL news detected")
-                    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}% &middot; Threshold: {threshold*100:.0f}%</div>", unsafe_allow_html=True)
-                else:
-                    st.error(f"❌ FAKE news detected")
-                    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}% &middot; Threshold: {threshold*100:.0f}%</div>", unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
+except Exception as e:
+                st.error(f"Prediction failed: {e}")
 
 with right:
-    st.subheader("Guidelines")
+    st.subheader("Guidelines :")
     st.write(
         "- Paste headline or short article text.\n"
         "- Result shows ✅ for REAL and ❌ for FAKE.\n"
         "- Thank you for using this webpage ."
     )
     st.info(
-        "Tip: For best accuracy, use the **same vectorizer** and **same scikit-learn version** "
-        "that you used during training (we set 1.6.1 here)."
+        "Tip: For best accuracy, use the **news from the dataset** "
     )
+
