@@ -131,26 +131,27 @@ with left:
                 is_real = (y_pred == 0)   # 0 → REAL, 1 → FAKE
 
                 st.markdown("<div class='result'>", unsafe_allow_html=True)
-if is_real:
-    st.success("✅ REAL news detected")
-    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
-else:
-    st.error("❌ FAKE news detected")
-    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
-st.markdown("</div>", unsafe_allow_html=True)
+                if is_real:
+                   st.success("✅ REAL news detected")
+                   st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
+                else:
+                   st.error("❌ FAKE news detected")
+                   st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
+                   st.markdown("</div>", unsafe_allow_html=True)
 
-except Exception as e:
-                st.error(f"Prediction failed: {e}")
+                except Exception as e:
+                   st.error(f"Prediction failed: {e}")
 
-with right:
-    st.subheader("Guidelines :")
-    st.write(
-        "- Paste headline or short article text.\n"
-        "- Result shows ✅ for REAL and ❌ for FAKE.\n"
-        "- Thank you for using this webpage ."
-    )
-    st.info(
-        "Tip: For best accuracy, use the **news from the dataset** "
-    )
+                with right:
+                  st.subheader("Guidelines :")
+                  st.write(
+                              "- Paste headline or short article text.\n"
+                              "- Result shows ✅ for REAL and ❌ for FAKE.\n"
+                              "- Thank you for using this webpage ."
+                          )
+                   st.info(
+                              "Tip: For best accuracy, use the **news from the dataset** "
+                          )
+
 
 
