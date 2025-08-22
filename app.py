@@ -142,7 +142,7 @@ with left:
             except Exception as e:
                    st.error(f"Prediction failed: {e}")
 
- with right:
+with right:
                   st.subheader("Guidelines :")
                   st.write(
                               "- Paste headline or short article text.\n"
@@ -152,6 +152,7 @@ with left:
                    st.info(
                               "Tip: For best accuracy, use the **news from the dataset** "
                           )
+
 
 
 
