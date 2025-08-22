@@ -139,7 +139,7 @@ with left:
                    st.markdown(f"<div class='confidence'>Confidence (REAL): {p_real*100:.1f}%</div>", unsafe_allow_html=True)
                    st.markdown("</div>", unsafe_allow_html=True)
 
-                except Exception as e:
+            except Exception as e:
                    st.error(f"Prediction failed: {e}")
 
                 with right:
@@ -152,6 +152,7 @@ with left:
                    st.info(
                               "Tip: For best accuracy, use the **news from the dataset** "
                           )
+
 
 
 
