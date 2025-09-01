@@ -133,10 +133,10 @@ with left:
                 st.markdown("<div class='result'>", unsafe_allow_html=True)
                 if is_real:
                    st.success("✅ REAL news detected")
-                   st.markdown(f"<div class='confidence'>Logistic Regression Probablity : {p_real:.3f}%</div>", unsafe_allow_html=True)
+                   st.markdown(f"<div class='confidence'>Logistic Regression Probablity : {p_real:.3f}</div>", unsafe_allow_html=True)
                 else:
                    st.error("❌ FAKE news detected")
-                   st.markdown(f"<div class='confidence'>Logistic Regression Probablity : {p_real:.3f}%</div>", unsafe_allow_html=True)
+                   st.markdown(f"<div class='confidence'>Logistic Regression Probablity : {p_real:.3f}</div>", unsafe_allow_html=True)
                    st.markdown("</div>", unsafe_allow_html=True)
 
             except Exception as e:
@@ -145,10 +145,11 @@ with left:
 with right:
                   st.subheader("Guidelines :")
                   st.write(
-                              "- Paste headline or short article text.\n"
+                              "- Write a short article of new or unseen news text.\n"
                               "- Result shows ✅ for REAL and ❌ for FAKE.\n"
-                              "- Thank you for using this webpage ."
+                              "- Model trained on USA-based news.\n"
                           )
+
 
 
 
