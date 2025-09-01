@@ -93,7 +93,7 @@ with c2:
 
 
 with c3:
-    st.image("newspaperlogo.png", caption=None, width=250)
+    st.image("7063304.png", caption=None, width=250)
 
 st.markdown("---")
 
@@ -149,6 +149,7 @@ with right:
                               "- Result shows ✅ for REAL and ❌ for FAKE.\n"
                               "- Model trained on USA-based news.\n"
                           )
+
 
 
 
