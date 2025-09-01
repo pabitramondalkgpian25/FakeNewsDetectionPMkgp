@@ -101,11 +101,11 @@ st.markdown("---")
 left, right = st.columns([2, 1], gap="large")
 
 with left:
-    st.subheader("Paste a news article/headline")
+    st.subheader("Write a news article")
     st.markdown("<section class='newsbox'>", unsafe_allow_html=True)
     news_text = st.text_area(
         label="News text",
-        placeholder="Paste the news text here (headline or paragraph)...",
+        placeholder="Paste the news text here (body text or paragraph)...",
         height=160,
         label_visibility="collapsed"
     )
@@ -149,6 +149,7 @@ with right:
                               "- Result shows ✅ for REAL and ❌ for FAKE.\n"
                               "- Thank you for using this webpage ."
                           )
+
 
 
 
